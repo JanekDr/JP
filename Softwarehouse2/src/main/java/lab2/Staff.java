@@ -6,12 +6,12 @@ public class Staff {
     String name;
     List<String> roles;
     int maxProjects;
-    int projectAssigned;
+    int projectsAssigned;
 
     public Staff(String name, List<String> roles){
         this.name = name;
         this.roles = roles;
-        this.projectAssigned = 0;
+        this.projectsAssigned = 0;
 
         if(roles.size()==1 && (roles.contains("QA") || roles.contains("PM"))){
             this.maxProjects = 2;
@@ -21,11 +21,13 @@ public class Staff {
     }
 
     public boolean canBeAssigned(String role) {
-        return projectAssigned < maxProjects && roles.contains(role);
+        return projectsAssigned < maxProjects && roles.contains(role);
     }
 
     public void assignToProject(){
-        projectAssigned++;
+        projectsAssigned++;
     }
-
+    public void reset() {
+        this.projectsAssigned = 0;
+    }
 }
