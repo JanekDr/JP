@@ -1,0 +1,29 @@
+package Logic;
+
+import java.time.LocalDate;
+
+public class Comment {
+    private static int commentIdCounter = 1;
+    private int commentId;
+    private LocalDate date;
+    private String content;
+    private int weight;
+    private String type;
+
+    public Comment(String content, int weight, String type, LocalDate date){
+        this.commentId = commentIdCounter++;
+        this.date = date;
+        this.content = content;
+        this.weight = weight;
+        this.type = type;
+    }
+
+    public int getCommentId() {
+        return commentId;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + commentId + ", Typ: " + type + ", Waga: " + weight + ", Data: " + date + ", komentarz: " + content;
+    }
+}
