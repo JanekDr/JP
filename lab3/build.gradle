@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'  // Dodanie wsparcia dla aplikacji
+}
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '17'  // Wersja Javy, jaką używasz
+targetCompatibility = '17'
+
+mainClassName = 'Main.Main'  // Klasa z metodą 'main', którą chcesz uruchomić
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Tutaj możesz dodać swoje zależności, np.
+    // implementation 'com.google.guava:guava:30.1.1-jre'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Main.Main'  // Ustawienie klasy głównej (entry point)
+    }
+}
