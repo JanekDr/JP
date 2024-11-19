@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '8.1.1' // Plugin Shadow
+}
+
+application {
+    mainClass = 'Main.Main'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.apache.pdfbox:pdfbox:2.0.29'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.named('shadowJar') {
+    archiveClassifier.set('')
+}
+
+tasks.named('distZip') {
+    dependsOn(tasks.named('shadowJar'))
+}
+
+tasks.named('distTar') {
+    dependsOn(tasks.named('shadowJar'))
+}
+
+tasks.named('startScripts') {
+    dependsOn(tasks.named('shadowJar'))
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'Main.Main'
+        )
+    }
+}
