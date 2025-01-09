@@ -1,0 +1,4 @@
+2. poprawic logi serwera
+3. zrobic dwa jary
+4. sprobowac poprawic wypisywanie stanu planszy dla obserwatora
+5.

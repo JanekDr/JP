@@ -1,0 +1,23 @@
+allprojects {
+    group = 'com.example' // Zmień na swoją grupę
+    version = '1.0'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    // Opcjonalne: ustawienia wspólne dla wszystkich modułów
+    java {
+        sourceCompatibility = JavaVersion.VERSION_17 // Ustaw odpowiednią wersję Javy
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    dependencies {
+        // Przykład wspólnych zależności (jeśli jakieś są)
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    }
+}
