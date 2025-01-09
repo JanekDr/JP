@@ -1,8 +1,0 @@
-1.co jesli gracz a wyzwal gracza b, i gracz b chce wyzwac kogos innego:
-    -mozna podac mu informacje ze ktos juz go wyzwal
-    -mozna dac graczowi b mozliwosc zaprzestania czekania na gracza b!!!
-
-2. poprawic logi serwera
-3. zrobic dwa jary
-4. sprobowac poprawic wypisywanie stanu planszy dla obserwatora
-5.
